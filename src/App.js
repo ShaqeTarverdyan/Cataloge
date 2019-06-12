@@ -20,7 +20,7 @@ function App() {
         <Header />
         <Switch>
             <Route  path='/' exact component={Home}/>
-            <Route  path='/category' exact component={Category}/>
+            {/* <Route  path='/category' exact component={Category}/> */}
             <Route  path='/contact_us' exact component={Contact_Us}/>
             <Route  path='/admin' exact component={Admin}/>
             <Route  path='/:name' exact component={Products}/>

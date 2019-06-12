@@ -13,9 +13,7 @@ class Category extends  React.Component {
                     {
                         this.props.categories.map((category, i) => {
                            return (
-                            <Link to={category.title}>
                             <Categories title={category.title} key={i}/>
-                            </Link>
                            )
                         })
                     }
@@ -23,7 +21,7 @@ class Category extends  React.Component {
             </div>
         );
     }
-    
+
 }
 
 const mapStateToProps = state => {

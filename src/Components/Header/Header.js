@@ -5,43 +5,40 @@ import { connect } from 'react-redux';
 
 
 class Header extends React.Component {
-
-    categories = () => {
-       return this.props.categories.map(category => 
-        category.title
-        )
-
-    }
-
     render() {
-        const categories = this.categories()
-        console.log('kkkk',categories)
         return (
-
             <Segment>
-                <Menu>
-                    <Menu.Item as={Link} to='/'>Home</Menu.Item>
-                    <Menu.Item as={Link} to='/category'> Category
-                        <Dropdown  simple text>
+                <Menu borderless>
+                    <Menu.Item  stackable as={Link} to='/'>Home</Menu.Item>
+                    <Menu.Item >
+                        <Dropdown  
+                            style={{zIndex:'999'}}
+                            simple
+                            pointing
+                            text='Category'                             
+                            closeOnBlur
+                        >
                             <Dropdown.Menu>
                                 {
-                                    this.props.categories.map(category => 
-                                        <Dropdown.Item>{category.title}</Dropdown.Item>
-                                        )
+                                    this.props.categories.map(category =>
+                                        <Link to={category.title}>
+                                            <Dropdown.Item 
+                                                 style={{width:"10vw", marginTop:"2vw"}}
+                                            >
+                                                {category.title}
+                                            </Dropdown.Item>
+                                        </Link>
+                                    )
                                 }
-                               
                             </Dropdown.Menu>
                         </Dropdown>
-                        
                     </Menu.Item>
                     <Menu.Item as={Link} to='/contact_us'>Contact Us</Menu.Item>
                     <Menu.Item as={Link} to='/admin'>Admin</Menu.Item>
                 </Menu>
             </Segment>
-
         );
     }
-
 }
 const mapStateToProps = state => {
     console.log(state)

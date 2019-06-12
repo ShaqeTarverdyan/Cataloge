@@ -1,11 +1,39 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Form, Button, Input,Select, TextArea } from 'semantic-ui-react';
 
 
 const AddProduct  = () => {
     return (
         <Segment>
-            add AddProduct
+              <Form>
+                {/* <Form.Field>
+                //    <Select>Category</Select>
+                </Form.Field> */}
+                <Form.Field>
+                    <Input 
+                        name='name'
+                        playsholder='name'
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <Input 
+                        name='color'
+                        playsholder='color'
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <Input 
+                        name='size'
+                        playsholder='size'
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <TextArea 
+                        name='description'
+                        playsholder='description'
+                    />
+                </Form.Field>
+            </Form>
         </Segment>
     );
 }
